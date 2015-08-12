@@ -6,12 +6,12 @@
     <div class="logo"></div>
 
     <nav>
-      <a>Home</a>
+      {{#link-to "home"}}Home{{/link-to}}
 
-      <a>
+      {{#link-to "user"}}
         <img class="avatar" src="/images/avatar.jpg" />
-        t4t5 <!-- You can change this to your own username -->
-      </a>
+        t4t5
+      {{/link-to}}
 
       <button class="chirp">Chirp</button>
     </nav>
