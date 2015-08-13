@@ -10,9 +10,9 @@
   </div>
 
   <div class="login-box">
-    {{#if errorMessage}}
+    {{#liquid-if errorMessage}}
       <p class="error">{{errorMessage}}</p>
-    {{/if}}
+    {{/liquid-if}}
 
     {{input placeholder="Username" value=username }}
     {{input type="password" placeholder="Password" value=password }}
