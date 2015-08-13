@@ -3,8 +3,8 @@
 <img class="avatar" src="/images/avatar.jpg" />
 <div class="info">
   {{#link-to 'user'}}
-    t4t5
+    {{chirp.user.username}}
   {{/link-to}}
-  <time>5 minutes ago</time>
-  <p>Hello world!</p>
+  <time>{{chirp.createdAt}}</time>
+  <p>{{chirp.text}}</p>
 </div>

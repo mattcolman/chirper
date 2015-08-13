@@ -1,12 +1,13 @@
 <!-- app/home/template.hbs -->
 
 <div class="page-container home-page">
+  <!-- Here we add an attribute called "user" to our "profile-glance"-component and set its value to the data loaded from the route -->
   <aside class="left">
-    {{profile-glance}}
+    {{profile-glance user=model.user}}
   </aside>
 
   <main>
     {{status-update}}
-    {{chirps-list}} <!-- New code -->
+    {{chirps-list chirps=model.chirps}}
   </main>
 </div>
