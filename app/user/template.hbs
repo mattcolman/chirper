@@ -1,17 +1,42 @@
 <!-- app/user/template.hbs -->
 
-<h1>My profile</h1>
+<div class="profile-cover cover-photo"></div>
 
-{{#link-to "user.index"}}
-  Chirps
-{{/link-to}}
+<div class="stats-container">
+  <div class="page-container">
+    <img class="avatar" src="/images/avatar.jpg" />
 
-{{#link-to "user.following"}}
-  Following
-{{/link-to}}
+    <ul class="profile-stats">
 
-{{#link-to "user.followers"}}
-  Followers
-{{/link-to}}
+      {{#link-to "user.index" tagName="li"}}
+        <h4>Chirps</h4>
+        <p>{{model.user.numberOfChirps}}</p>
+      {{/link-to}}
 
-{{outlet}}
+      {{#link-to "user.following" tagName="li"}}
+        <h4>Following</h4>
+        <p>{{model.user.numberOfFollowing}}</p>
+      {{/link-to}}
+
+      {{#link-to "user.followers" tagName="li"}}
+        <h4>Followers</h4>
+        <p>{{model.user.numberOfFollowers}}</p>
+      {{/link-to}}
+
+    </ul>
+  </div>
+</div>
+
+<div class="page-container user-page">
+
+  <aside>
+    <h1>{{model.user.username}}</h1>
+    <p class="description">{{model.user.aboutMe}}</p>
+    <p class="joined">Joined {{model.user.joinedAt}}</p>
+  </aside>
+
+  <main>
+    {{outlet}}
+  </main>
+
+</div>
