@@ -32,7 +32,7 @@
   <aside>
     <h1>{{model.user.username}}</h1>
     <p class="description">{{model.user.aboutMe}}</p>
-    <p class="joined">Joined {{model.user.joinedAt}}</p>
+    <p class="joined">Joined {{ago model.user.joinedAt}}</p>
   </aside>
 
   <main>

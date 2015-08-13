@@ -2,7 +2,9 @@
   "predef": [
     "document",
     "window",
-    "-Promise"
+    "-Promise",
+    "sweetAlert", // <!-- What you need to add!
+    "swal" // <-- This too (sweetAlert shorthand)
   ],
   "browser": true,
   "boss": true,
