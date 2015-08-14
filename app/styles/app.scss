@@ -1,6 +1,9 @@
 // app/styles/app.scss
 
 @import "layout";
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
+
 @import "ui";
 @import "header";
 

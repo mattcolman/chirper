@@ -13,10 +13,19 @@
         t4t5
       {{/link-to}}
 
-      <button class="chirp">Chirp</button>
+      <button class="chirp" {{action 'toggleComposeModal'}}>Chirp</button>
     </nav>
 
   </div>
 </header>
 
 {{liquid-outlet}}
+
+{{#if showingComposeModal}}
+  {{#modal-dialog translucentOverlay=true close=(action 'toggleComposeModal')}}
+
+    <!-- We want to be able to close the modal by bubbling a "dismiss"-action from the component too -->
+    {{compose-modal dismiss=(action 'toggleComposeModal')}}
+
+  {{/modal-dialog}}
+{{/if}}
