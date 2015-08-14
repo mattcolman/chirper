@@ -2,8 +2,10 @@
 
 <div class="page-container home-page">
   <!-- Here we add an attribute called "user" to our "profile-glance"-component and set its value to the data loaded from the route -->
+
   <aside class="left">
-    {{profile-glance user=model.user}}
+    {{profile-glance user=session.currentUser}}
+    <button class="logout" {{action 'logout'}}>Log out</button>
   </aside>
 
   <main>

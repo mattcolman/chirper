@@ -18,6 +18,15 @@ module.exports = function(environment) {
       'connect-src': "http://localhost:9000"
     },
 
+    'simple-auth': {
+      authorizer: 'simple-auth-authorizer:oauth2-bearer',
+      crossOriginWhitelist: ['http://localhost:9000']
+    },
+
+    'simple-auth-oauth2': {
+      serverTokenEndpoint: 'http://localhost:9000/token'
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
