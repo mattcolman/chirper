@@ -9,7 +9,7 @@
       <nav>
         {{#link-to "home"}}Home{{/link-to}}
 
-        {{#link-to "user"}}
+        {{#link-to "user" session.currentUser.username}}
           <img class="avatar" src="/images/avatar.jpg" />
           {{session.currentUser.username}}
         {{/link-to}}

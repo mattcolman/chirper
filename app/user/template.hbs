@@ -23,6 +23,10 @@
         <p>{{model.user.numberOfFollowers}}</p>
       {{/link-to}}
 
+      {{#unless userIsProfile}}
+        {{follow-button profile=model.user}}
+      {{/unless}}
+
     </ul>
   </div>
 </div>

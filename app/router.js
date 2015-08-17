@@ -7,7 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('home');
-  this.route('user', { path: 'profile' }, function() {
+  this.route('user', { path: 'profile/:username' }, function() {
     this.route('following');
     this.route('followers');
   });

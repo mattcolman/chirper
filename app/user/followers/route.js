@@ -1,11 +1,12 @@
-// app/users/followers/route.js
+// app/user/followers/route.js
 
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function() {
+  model: function(params, transition) {
+    var username = transition.params.user.username;
     return Ember.RSVP.hash({
-      users: this.store.findAll('user')
+      users: this.store.query('user', { followee: username })
     });
   }
 });
