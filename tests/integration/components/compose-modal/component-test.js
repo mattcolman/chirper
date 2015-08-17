@@ -13,14 +13,18 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{compose-modal}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  // Check if the rendered component contains exactly one button with the class "chirp"
+  assert.equal(this.$().find('button.chirp').length, '1');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#compose-modal}}
-      template block text
-    {{/compose-modal}}
-  `);
+  // Check if the rendered component contains one textarea
+  assert.equal(this.$().find('textarea').length, '1');
+});
 
-  assert.equal(this.$().text().trim(), 'template block text');
+test('long text makes label red', function(assert) {
+  var longText = 'Lorem ipsum dolor sit amet, eam ex cibo elitr tamquam. Nusquam adipiscing ea sea, habemus minimum vis cu. Pri ponderum percipitur ex, eu mei tamquam eloquentiam. Ius apeirian insolens ea.';
+
+  this.set('chirpText', longText);
+  this.render(hbs`{{compose-modal chirpText=chirpText}}`);
+
+  assert.ok(this.$().find('p.remaining-chars').hasClass('warning'));
 });
