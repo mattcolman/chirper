@@ -5,7 +5,9 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model: function() {
     return Ember.RSVP.hash({
-      chirps: this.store.findAll('chirp')
+      chirps: this.store.query('user', { me: true }).then((users) => {
+        return users.get('firstObject').get('chirps')
+      })
     });
   },
 
