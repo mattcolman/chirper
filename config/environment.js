@@ -54,7 +54,10 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.apiURL = 'https://chirpy-the-app-api.herokuapp.com';
+    ENV.contentSecurityPolicy['connect-src'] = 'https://chirpy-the-app-api.herokuapp.com';
+    ENV['simple-auth'].crossOriginWhitelist = ['https://chirpy-the-app-api.herokuapp.com'];
+    ENV['simple-auth-oauth2'].serverTokenEndpoint = 'https://chirpy-the-app-api.herokuapp.com/token';
   }
 
   return ENV;
